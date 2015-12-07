@@ -5,6 +5,8 @@
  */
 package bakkerijapp;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -16,10 +18,16 @@ import javafx.scene.control.Label;
  *
  * @author lars
  */
-public class FXMLDocumentController implements Initializable {
+public class ProfileController implements Initializable {
     
     @FXML
     private Label label;
+    
+    // For screen size adjustments
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    double width = screenSize.getWidth();
+    double height = screenSize.getHeight();
+    
     
     @FXML
     private void handleButtonAction(ActionEvent event) {
