@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package bakkerijapp;
+
+package view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,10 +17,17 @@ public class BakkerijApp extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("profile.fxml"));
         
+
+        
         Scene scene = new Scene(root);
         
+        
+        
+        stage.setTitle("Bakkerij Applicatie");
+
         stage.setScene(scene);
         stage.show();
+
     }
 
     /**

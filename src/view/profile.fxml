@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="225.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bakkerijapp.ProfileController">
+   <children>
+      <Button fx:id="button1" mnemonicParsing="false" text="Button" />
+      <Label id="left" fx:id="leftLabel" text="Left" />
+      <Label fx:id="centerLabel" text="Center" />
+      <Label fx:id="rightLabel" text="Right" />
+      <Label id="bottom" fx:id="bottomLabel" prefHeight="65.0" prefWidth="689.0" text="Bottom" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
