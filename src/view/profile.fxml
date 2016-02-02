@@ -7,12 +7,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="225.0" prefWidth="689.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bakkerijapp.ProfileController">
+<AnchorPane id="AnchorPane" prefHeight="402.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
    <children>
-      <Button fx:id="button1" mnemonicParsing="false" text="Button" />
-      <Label id="left" fx:id="leftLabel" text="Left" />
-      <Label fx:id="centerLabel" text="Center" />
-      <Label fx:id="rightLabel" text="Right" />
-      <Label id="bottom" fx:id="bottomLabel" prefHeight="65.0" prefWidth="689.0" text="Bottom" textAlignment="CENTER" />
+      <Button fx:id="makeProfileBTN" layoutX="184.0" layoutY="189.0" mnemonicParsing="false" onAction="#clickProfileButton" text="Maak Profiel Aan" />
+      <TextField fx:id="naamInput" layoutX="184.0" layoutY="58.0" promptText="Naam" />
+      <TextField fx:id="straatInput" layoutX="184.0" layoutY="97.0" prefHeight="25.0" prefWidth="149.0" promptText="Straat" />
+      <TextField fx:id="huisnummerInput" layoutX="347.0" layoutY="97.0" prefHeight="25.0" prefWidth="95.0" promptText="Huisnummer" />
+      <TextField fx:id="plaatsInput" layoutX="184.0" layoutY="139.0" promptText="Plaats" />
+      <Button layoutX="72.0" layoutY="189.0" mnemonicParsing="false" text="Upload logo" />
+      <Label fx:id="naamError" layoutX="85.0" layoutY="62.0" textFill="RED" />
+      <Label fx:id="straatError" layoutX="85.0" layoutY="101.0" textFill="RED" />
+      <Label fx:id="plaatsError" layoutX="85.0" layoutY="143.0" textFill="RED" />
+      <Label fx:id="huisnummerError" layoutX="347.0" layoutY="143.0" textFill="RED" />
    </children>
 </AnchorPane>

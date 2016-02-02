@@ -1,68 +1,84 @@
 
 package controller;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.control.TextField;
+import model.Profile;
 
 /**
+ * FXML Controller class
  *
  * @author lars
  */
 public class ProfileController implements Initializable {
+    @FXML
+    private Button makeProfileBTN;
+    @FXML
+    private TextField naamInput;
+    @FXML
+    private TextField straatInput;
+    @FXML
+    private TextField huisnummerInput;
+    @FXML
+    private TextField plaatsInput;
     
+    Profile pf;
     @FXML
-    private BorderPane bp;
+    private Label naamError;
     @FXML
-    private Button button1;
+    private Label straatError;
     @FXML
-    private Label leftLabel;
+    private Label plaatsError;
     @FXML
-    private Label bottomLabel;
-    @FXML
-    private Label centerLabel;
-    @FXML
-    private Label rightLabel;
-   
+    private Label huisnummerError;
+
+    public ProfileController() throws SQLException {
+        this.pf = new Profile();
+    }
+
+    
+
+
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+
+    @FXML
+    private void clickProfileButton(ActionEvent event) throws SQLException {
         
+        naamError.setText(null);
+        straatError.setText(null);
+        huisnummerError.setText(null);
+        plaatsError.setText(null);
         
-       Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
-       double width = screensize.getWidth() - ((screensize.getWidth() / 100) * 10);
-       double height = screensize.getHeight() - ((screensize.getHeight() / 100) * 15); 
-       
-       // Set Width & Height Application
-       bp.setPrefWidth(width);
-       bp.setPrefHeight(height);
-       
-       
-       // Set Size Labels
-       leftLabel.setStyle("-fx-background-color: #333;");
-       centerLabel.setStyle("-fx-background-color: #000;");
-       rightLabel.setStyle("-fx-background-color: #333;");
-       
-       leftLabel.setLayoutX(0);
-       centerLabel.setLayoutX(width / 2);
-       rightLabel.setLayoutX((width / 4) + (width / 2));
-       
-       leftLabel.setPrefWidth(width / 4);
-       centerLabel.setPrefWidth(width / 2);
-       rightLabel.setPrefWidth(width/ 4);
-       
-      
-       
-       // Set Dynamic Width
-       button1.setPrefWidth(width / 20);
-    
-       
-       
-    }   
+        if (!naamInput.getText().isEmpty()) {
+            if (!straatInput.getText().isEmpty()) {
+                if (!huisnummerInput.getText().isEmpty()){
+                    if (!plaatsInput.getText().isEmpty()) {
+                         pf.makeProfile(naamInput.getText(),straatInput.getText(),Integer.parseInt(huisnummerInput.getText()),plaatsInput.getText());
+                    } else {
+                        plaatsError.setText("Plaats is nog leeg");
+                    }
+                } else {
+                    huisnummerError.setText("Huisnummer is nog leeg");
+                }
+            } else {
+                straatError.setText("Straat is nog leeg");
+            }
+        } else {
+            naamError.setText("Naam is nog leeg");
+        }        
+    }
     
 }
