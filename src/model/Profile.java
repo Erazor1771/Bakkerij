@@ -2,6 +2,8 @@
 package model;
 
 import database.Database;
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,21 +44,21 @@ public class Profile {
      * @param plaats
      * @return 
      */
-    public void makeProfile(String naam, String straat, int huisnummer, String plaats) throws SQLException
+    public void makeProfile(String naam, String straat, int huisnummer, String plaats, String path_to_logo) throws SQLException
     {
         Profile pf = new Profile(naam,straat,huisnummer, plaats);
-        this.addProfileToDB(naam,straat,huisnummer, plaats);
+        this.addProfileToDB(naam,straat,huisnummer, plaats, path_to_logo);
         System.out.println(pf.toString());
     }
      
-    public void addProfileToDB(String naam, String straat, int huisnummer, String plaats) throws SQLException
+    public void addProfileToDB(String naam, String straat, int huisnummer, String plaats, String path_to_logo) throws SQLException
     { 
         List<Pair> mPairs = new ArrayList<Pair>();
         mPairs.add(new Pair("String", naam));
         mPairs.add(new Pair("String", straat));
         mPairs.add(new Pair("Int",huisnummer));
         mPairs.add(new Pair("String", plaats));
-        mPairs.add(new Pair("String", "path-to-img"));
+        mPairs.add(new Pair("String", path_to_logo));
          
         db.makeDBConnection();
         db.insertData

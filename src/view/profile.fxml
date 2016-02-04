@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -9,15 +10,17 @@
 
 <AnchorPane id="AnchorPane" prefHeight="402.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
    <children>
-      <Button fx:id="makeProfileBTN" layoutX="184.0" layoutY="189.0" mnemonicParsing="false" onAction="#clickProfileButton" text="Maak Profiel Aan" />
+      <Button fx:id="makeProfileBTN" layoutX="184.0" layoutY="292.0" mnemonicParsing="false" onAction="#clickProfileButton" text="Maak Profiel Aan" />
       <TextField fx:id="naamInput" layoutX="184.0" layoutY="58.0" promptText="Naam" />
       <TextField fx:id="straatInput" layoutX="184.0" layoutY="97.0" prefHeight="25.0" prefWidth="149.0" promptText="Straat" />
       <TextField fx:id="huisnummerInput" layoutX="347.0" layoutY="97.0" prefHeight="25.0" prefWidth="95.0" promptText="Huisnummer" />
       <TextField fx:id="plaatsInput" layoutX="184.0" layoutY="139.0" promptText="Plaats" />
-      <Button layoutX="72.0" layoutY="189.0" mnemonicParsing="false" text="Upload logo" />
+      <Button fx:id="uploadLogoBTN" layoutX="72.0" layoutY="189.0" mnemonicParsing="false" onAction="#clickLogoButton" text="Upload logo" />
       <Label fx:id="naamError" layoutX="85.0" layoutY="62.0" textFill="RED" />
       <Label fx:id="straatError" layoutX="85.0" layoutY="101.0" textFill="RED" />
       <Label fx:id="plaatsError" layoutX="85.0" layoutY="143.0" textFill="RED" />
       <Label fx:id="huisnummerError" layoutX="347.0" layoutY="143.0" textFill="RED" />
+      <ImageView fx:id="logoView" fitHeight="87.0" fitWidth="106.0" layoutX="184.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="logoPathLabel" layoutX="71.0" layoutY="346.0" />
    </children>
 </AnchorPane>
